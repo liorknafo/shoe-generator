@@ -1,1 +1,18 @@
-start file
+# Shoe Generator
+
+This repository contains a command-line utility that scales a 3D shoe STL to match a user's foot size using a photograph.
+
+## Usage
+
+```
+python foot_to_shoe.py --image foot.jpg --foot-length-mm 270 --stl shoe.stl --output scaled_shoe.stl
+```
+
+The program will:
+
+1. Detect the heel and big toe in the image and measure the distance between them in pixels.
+2. Use the provided real foot length to compute a millimetres-per-pixel ratio.
+3. Estimate foot width and scale the STL's length and width accordingly.
+4. Rotate the model to match the foot's orientation and save the scaled STL.
+
+Dependencies: `opencv-python`, `numpy`, and `numpy-stl`.
